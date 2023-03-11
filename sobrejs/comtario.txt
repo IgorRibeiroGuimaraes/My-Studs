@@ -1,0 +1,1156 @@
+
+*Módulos de JavaScrip*
+
+ Aula 01
+
+ *String : cadeia de caracteres
+
+ ""  aspas duplas
+
+ ' '  aspas simples
+
+`` : crase permite multiplas linhas e expressões de línguagens 
+
+Aula 02
+
+ *number: numeros 
+
+ 33 : inteiros
+
+ 12.3 : real - float 
+
+NaN : Not a Number
+
+Infinity : infinito 
+
+ Aula 03
+
+ Somente 2 valores
+
+ true : Verdadeiro 
+
+ false : falso
+
+  Aula 04
+
+ *undefined
+    * indefinido
+
+ *Null
+    *nulo
+    *objeto que n possui nada dentro
+    *diferente de indefinido 
+
+Aula 03
+*Object
+    *objeto
+    *propriedade/ atributos
+    *fucninalidade/ métodos
+ {propriede : valor}
+
+Aula 04 
+*Array (vetores)
+    *Uma lista
+    *Agrupamentos de dados 
+
+    *Módulos sobre Variáveis do JavaScrip*
+*Var
+    * Nome simbólicos para receber algum valor
+    *Atalho de código
+    *Indentificadores
+    *3 palavras reservadas para criar uma variável
+        *var
+        *let
+        *const
+    (cada um se comporta de um jeito)
+
+*Tipos dinâmicos
+    O JS é uma linguagem fracamente dinâmica
+    -Varáveis não precisam ter um tipo previamente definido
+    -Podemos mudar o conteúdo da variável
+
+
+    *Escope deetermina a visibilidade de alguma variável no JS
+
+    #Block statement = declaração do bloco
+    { = inicio do bloco
+
+
+    } = termina o bloc
+    o bloco, também criará um novo escopo. Chamamos de `block-scoped`
+
+ ## var
+    var é global e poderá funcionar fora de um escopo de bloco
+    js tem um corpotamento a qual pega a varialvél declarado como var dentro do bloco e 
+    joga em cima do código mas sem podermos ver o nome dessa técnica é hoisting
+
+*Scope let e const
+    const e let são locais e só funcionam no escopo onde foi criado
+
+*Declaração de uma função 
+agrupar um bloco de código, para poder re utilizar  
+creat = nome da funcão
+
+ // aplicativo de frase motivacionais
+ fuction creatPhrase(){
+    console.log('Estudar é muito bom')
+    console.log('Paciência e persistência')
+    console.log('revisão é mãe do aprendizado')
+}                         
+ pode ser executado a qualquer momento esse bloco de código cada linha é guardado em memória 
+
+ // executar a função: creatPhrase()
+
+ declaração de função em uma váriavel
+    Sum = somar
+    Função anônima ou tbm chamado de function expression
+ const sum = function(){
+    *bloco de código*
+ }
+ execução sum (nome da variável)
+
+ //parâmetro (parameters)
+ funciton(number1, number2)
+
+ sum(2,3) number1 = 2 number2 = 3 // arguments - argumentos 
+
+ const sum = function(number1, number2){
+   let total = number1 + number2
+    return total //vai retornar o valor daa sona no console.log
+ }
+
+ let number1 = 34
+ let number = 25
+ sum(number1, number2) // diferente de quando está na fuction pois está fora do escopo 
+
+ console.log(`o número 1 é ${number1}`)
+ console.log(`o número 2 é ${number2}`)
+ console.log(`a soma é ${sum(number1,number2)}`)
+
+ //funciton scope
+
+   let subject = 'creat video'
+   
+   // se n existe um parametro para função ela vai sobescrever o subject fora do
+   
+   let subject
+   fuction createthink(sbject){  
+   subject = 'study' 
+   return subject
+ }
+
+ console.log(creatThink(subject)) -- retorna study
+ console.log(subject) -- retorna creat vídeo
+
+ //fuction hoisting
+   // aqui está sofrendo o hoisting
+
+ SayMyName()
+
+ function sayMyName(){
+   console.log('Igor')
+ }
+ //n sofre o hoisting
+  SayMyName()
+
+ const/var/let sayMyName = fuction(){
+   console.log('Igor')
+ }
+
+ // arrow funciton
+   //forma mais rápido de escrever uma função no JS
+
+   SayMyName()
+
+ const sayMyName = () => {
+   console.log('Igor')
+ }
+
+ //call baack function
+
+ fucntion sayMyName(name){
+   console.log(name)
+ }
+
+ sayMyName('Igor')  // aceita qualquer tipo de dado até uma function
+
+ // função contrutora ou function() constructor
+
+ *expressão new
+ *criar um novo projeto
+ *this keyword
+
+ function Person(){
+   this.igor = name //refêrencia o objeto lá fora
+ }
+ const igor = new person("igor")
+ console.log(igor) objeto
+ 
+
+ // Manipulando dados 
+
+ // prototype
+  Prototype = prototipo 
+
+  {} objeto // na lingugagem JS muitas vezes ela pode ser dito um "protótipo" no caso esse objeto ele está herdando um protótipo ascendente que já pode ter sido inserido antes de criar o projeto _proto_
+
+  prototype chain = cadeia de protótipo 
+  Ou seja ele pega as propriedades e vlores do protótipo a cima 
+
+ // conversão de dados
+  Type conversion(typecasting) vs Type coersion
+  
+  Alteração para um tipo de dado para outro 
+  
+  typecasting: alteração de um tipo de dado para outro
+
+  Type coersion: O Js implicitamente fazendo essa troca
+  
+  As vezes os JS pode usar os dois de forma implicita 
+
+   cosole.log('9' + 5) osou o type coersion
+
+   // o JS implicitamente fez cosole.log('9' + '5') transformou em uma String para que n ouvesse nenhum problema 
+
+   console.lo(number('9') + 5)
+
+   // Utilizou o typecasting ou seja quando nós queremos mudar o dado
+
+ // Manipulando string em número e vice-versa
+
+ let string = "123"
+ console.log(Number(string))
+
+ let number = 321
+ console,log(String(number))
+
+ // contar quantaos caracteres tem uma palavra e quantos dígitos tem um núnmero
+
+ let word = "Odonto"
+ console.log(word.lenght)
+
+ let  number = 1234
+ console.long(number.length) // undefined
+
+ console.long(String(number).length)
+
+ //transformar um número qubrado com ponto por vírgula 
+
+ let number = 32.33
+ console.log(number.toFixed(2).replace(".", ","))
+
+ //transformar letras minúsculas em maiúsculas e vice-versa
+
+ let word("Programar")
+ console.log(word.toUpperCase())
+
+ console.log(word.toLowerCase())
+
+ //separar um texto que contem espaços, em novos array onde cada texto é uma posição do array. Depois disso, transforme o array em um texto e onde eram espaços, coloque _
+
+ let phrase = "Eu quero ser Rico"
+
+ let myArray = phrase.split("")
+ console.log(myArray) // vai separar cada palavra com ""
+
+  let myArray = phrase.split("o")
+ console.log(myArray) // não vai ter a letra o
+
+ segunda parte do exercício
+
+ let phrase = "Eu quero ser Rico"
+ let myArray = phrase.split("")
+ let phraseWithUnderscore = myArray.join("_") // junta automáticamente o arry o metódo join
+
+ console.log(praseWithUnderscore)
+
+ //verificar se o texto contém uma palavra espécifica
+
+ let phrase "Progamar é legal"
+ console.log(phrase.incluse("divertido")) // n vai achar
+
+ let phrase "Progamar é divertido"
+ console.log(phrase.incluse("divertido")) // true
+
+ //manipulando arrays
+ *criar array com conctrutor
+
+ let myArray = new Array ('a', 'b', 'c')
+
+ console.long(myArray)
+
+ //contar elemento de um array
+
+ console.long(["a",c"b", "c"].length) // dentro de um array pode ser qualquer tipo de dado desde uma string até mesmo de uma fução
+
+ //transformar uma cedeia de caracteres em  elementos de array
+
+ let word = "manipulção"
+ console.log(Array.from(word))
+
+ //Manipulando Arrays
+ let techs = ["html", "css", "js"]
+                0       1     2
+ //adicionar um item no fim
+ console.log(techs.push("nodejs"))
+
+ //adicionar no começo 
+ techs.unshift("Sql")
+
+ //remover do fim
+ techs.pop()
+
+ //remover do começo
+ techs.shift()
+
+ //pegar somente alguns elementos do aray
+ console.log(techs.slice(1, 3))
+ 
+ //remover 1 ou mais intems em qualquer posição do array
+ techs.splice(1, 1) vai retirar o css
+
+ 
+ console.log(techs)
+ 
+ //encontrar a posição de um alemento no array
+ let index = techs.indexOf('css')
+ 
+ cosole.log(index)
+
+ remoção
+ let index = techs.indexOf('css')
+ techs.splice(index, 1)
+ 
+ cosole.log(index) 
+
+ // Expressões e Operadores
+ -Expressions
+ -Operators
+    Binary
+    Unary
+    Ternary
+
+ Expressões: qualquer linha de código que resolve qualquer coisa dentro do JS
+  Exemplo:
+    Let number = 1 (obs: pode ou não terminar com ";" na lígugaem JS isso é facultativo mas em algumas línguagens é obrigatorio)
+
+ Operador binario : atribução de dois valores 
+  Exemplo
+    console.log(number + 1)
+
+  Operador Unary: Um único valor 
+  Exemplo 
+   Let number = 1
+    console.log(++number) - incremento
+    console.log(--number) - descremento
+
+  Operador ternary: Quando existem 3 expressões
+  Exemplo
+    console.log(true ? 'alo' : 'nada') - Return alo
+    console.log(false ? 'alo' : 'nada') - Return nada
+
+ //New
+  
+  *left-hand-side expression
+  *criar um novo objeto
+  
+  Exemplo
+    let name = new String('Igor')
+    name.surName = "Ribeiro" // novo objeto 
+    let age = new Number(23)
+    console.log(nam, age) // nome e idade eo surname
+
+    console.log(nam.surName, age) // sobrenome e idade
+
+ Operadores Unários
+  *typeof
+  *delete
+  
+  Console.log(typeof"Igor") // aqui o tipo do objeto
+  
+  const person = {
+    name: 'Igor',
+    age: 18
+  }
+  
+  delete person.age // deleta uma própriedade de person
+
+  Operadores Aritiméticos
+
+  *Multiplicação = *
+    console.log(5 * 5) //números reais são aceitos tbm
+  
+    *divisão = /
+    console.log(2 / 2)
+  
+    *soma = +
+    console.log(100 + 100)
+  
+    *subtração = -
+    console.log(2 - 2) 
+
+  *resto da divisão = %
+    let remaider
+    remainder = 11 % 3
+    console.log(remainder)
+  
+    *incremento = ++
+    let increment = 0
+    increment ++
+    console.log(increment)
+  
+  *decremento = --
+    let decrement = 0
+    
+    console.log(decrement--) // 0
+    console.log(--decrement) // -1
+    
+  *exponencial = **
+    console.log(2 ** 2)
+
+ //Grouping operatator ou tbm chamado agrupamento de operações ( )
+  pode trocar as ordem de operações 
+  Exempo
+    let total = 2 + 3 * 5 // aqui vai ser feito a multiplicação primeiro mas se eu quiser fazer a soma primeiro basta usar o gruping operator
+    
+    let total = (2 + 3) * 5 // aqui vai ser feito primeiro a soma e dps a multiplicação
+
+ //Operadores de compração
+  Irá comparar valores e retornar um boolen como resposta a comparação (boolen = true or false)
+  
+  let one = 1
+  let two = 2
+  
+  == igual a
+    console.log(two == 1) // fasle
+    console.log(one == "1") true
+
+ != difrente de
+  console.log(one != two) = true
+  console.log(one != one) = false
+  console.log(one != "1") = false
+
+ === estrimente igual a = comparação de valores e tipo
+  console.log(one === "1") //false
+  console.log(one === 1)  // true
+
+ !== estritamente diferente de = diferente de seu valor e diferente do seu tipo ou seja é 
+  console.log(two !== "2") //true
+  console.log(two !== 2) // false
+
+ let one = 1
+ let two = 2
+ 
+ > Maior que 
+  console.log(one > two) // false
+
+ >= Maior ou igual a
+  console.log(one >= 1) // true
+  console.log(two >= 1) // true
+
+ < Menor que
+  console.log(one < two) // true
+
+ <= Menor igual a
+  consol.log(one <= two) // true
+  console.log(one <= 1) // true
+  console.log(one <= 0) // false
+
+ Operadores de atribuição (Assigment)
+  
+  Let x
+  console.log(x) //undefined
+ 
+ Assigment
+  x = 1
+
+ addition assigment
+  // x = x +2 simula essa expressão
+  
+  x += 2
+ 
+ subtraction assigment
+  // x = x  1
+ X -= 1
+
+ multiplication assigment
+ //x = x * 2
+  x *= 2
+ 
+ division assigment
+ x = x / 2
+  x /= 2
+
+ reaminder, exponetation
+  x %= 2
+  x **= 2
+  
+  console.log(x)
+
+ Operadores lógicos (logical operators)
+
+ // 2 valores booleanos, quando verificados
+    resultará em verdadeiro ou falso
+
+ let pao = true
+ let queijo = true
+
+ And &&
+  
+ console.log(pao && queijo) // true
+    Perguntando se tem os dois se n tiver é falso
+ Or ||
+
+ console.log(pao || queijo) // true
+    Se tem algum dos dois
+
+ Not !
+
+ console.log(!pao) // false
+  Troca de valor se é true é false se é false é true
+
+ Opoerador condicional (ternário)
+
+  Depende da condição, nós receberemos valores diferentes
+
+  Condição então valor 1 se não valor 2
+  conition ? value1 : value2
+
+  Exemplos
+ Café da manhã top 
+  Let pao = true
+  let queijo = true
+
+  const niceBreakfast = pao && queijo ? 'Café top ' : 'Café ruim'  
+  
+  consol.log(niceBreakfast) // return café top
+
+  Maior de 18 
+
+  let age = 16
+  const canDrive = age >= 18 "Can drive" : "Can´t Drive"
+
+  console.log(canDrive) // return can´t drive
+ 
+ Operador de String (String operador)
+
+  Coparasion(comparação)
+    console.log('a' = 'a') // true
+ 
+ concatenation(concatenação)
+  Retrona a união de duas String
+    cosole.log('a' + 'a') // aa
+
+ //Falsy
+  Quando um valor é considerado false em contextos onde um booleano é obrigatório ( condicionais e loops )
+
+  false
+  0
+  -0
+  ""
+  null
+  undefied
+  NaN
+
+ console.log(false? 'Verdadeiro' : 'falso') // false
+ console.log(0? 'Verdadeiro' : 'falso') // false 
+ // utiliza o typecoersion para retornar o false nesses casos
+
+ Truthy
+  Quando um valor é considerado true em contextos onde um booleano é obrigatório (condicionais e loops)
+
+  true
+  {}
+  []
+  1
+  3.23
+  "0"
+  "false"
+  -1
+  Infinity
+  -Infinity
+
+  console.log (true ? 'verdadeiro' : 'falso) // verdadeiro
+  console.log ({} ? 'verdadeiro' : 'falso) // Verdadeiro
+  // Aqui utiliza o typecasting transforma um objeto vazio em um booleano
+
+ Operador precedente 
+  Precedência de operadores 
+
+   *grouping                  ( )
+   * negação e incremento     ! ++ --
+   * mutiplicação e divisão   * /
+   *adição e subtração        + - 
+   *relacional                < <= > >=
+   *igualdade                 == != == !== 
+   *And                       &&
+   *Or                        ||
+   *condicional               ? :
+   *assigment (atribuição)    = += -= *=
+ 
+ //Controle de fluxo ou Control flow
+
+ //If... Else ou Se...Se não
+  
+ let temperature = 36.5 
+ 
+ If(temperatuere >= 37 ){
+  console.log('febre')
+  }
+
+  Else if(temperature < 37.5 && temperature >= 37){
+    console.log('Febremoderada)
+  } (pode ter vários else if)
+  
+  Else{
+  console.log('Saudável)  
+  }
+
+ //switch
+  
+
+ Switch(expression){
+  case 'a':
+    //codigo
+    break
+  case 'b':
+    //codigo
+    break
+  default:  // n encaixou em nenhum dos outros casos
+    
+  break
+ }
+ 
+ //Throw = disparar ou lançar
+
+ try...catch = tentar pegar
+  tentar disparar um erro na minha API e tentar capturar o erro 
+  Ex
+    fuction sayMyName(name = ''){
+      if(name == '') {
+        throw 'Nome é obirgaório'
+      }
+      console.log('depois do erro)
+    }
+  try{
+    sayMyName()
+  }catch(e){
+    console.log(e)
+  }
+ 
+ //Estrutura de repetição
+  //for = para
+  //break - para a execução do loop 
+  //continue - continua o loop
+
+  for(let i = ; i <= 10; i++){ 
+    console.log(i)
+  } //contagem até 10
+
+ //while
+  
+  let i = 0;
+  while(i < 10){
+    console.log(i)
+
+    i++
+  } // utiliza quando n sabe que momento parar
+
+ //for of 
+ cria um loop através de uma váriavel préviamente que estivermos pode utilizar uma string
+
+  let name = 'Igor'
+  let names = ['joão','paulo','Pedro']
+
+  for(let char of name){
+    console.log(char)
+  } //i g o r de cima para baixo
+  
+  for(let name of names){
+    console.log(name)
+  } // nome de cada um no array
+
+ //for...in 
+  Cria um loop em cima de um objeto ou seja das propriedades do objeto
+
+  let person ={
+    name: 'john',
+    age: 30,
+    weight: 56.6
+  }
+
+  for(let property in person){
+    console.log(property)
+  } // vai aparecer todas as propriedade
+
+  for(let property in person){
+    console.log(property)
+    console.log(person[property]) // vai aparecer o nome das propiedades e os valores
+  }
+
+  # DOM (Document Object Model)
+
+    *É o HTML convertido para um Objecto JavaScript
+    *API que representa e interage com HTML
+    *Estrutura de dados do tipo árvore, criado pelo browser
+    *Propriedades e métodos
+
+    #para que?
+    *JavaScript usa o DOM para se conectar ao HTML
+    *Manipular o HTML com JavaScript
+    *você só programa pra WEB porque existe a DOM
+    
+    Exemplo 
+
+    getElementById() // ID
+
+      const elemnt = document.getElementById('blog-title') // pegando um elemento do HTML através do ID 
+    console.log(elemnt) // return todo o element no html *<h1 id="blog-title">Meu Blog</h1>
+
+    getElementByClass() // classe
+      const element = document.getElementByClass('');
+      console.log(element)
+    
+    getElementByTagName() // tag name como head, meta entre outras muitas tag
+      const element = document.getElementByTagName('')
+      console.log(element)
+
+    QuerySelector() // pega pelo seletor  (buscador de seletor)
+      const element = document.querySelector('')
+      console.log(element)
+      
+    QuerySelectorAll() // traz todos os seletores 
+      const element = document.querySelectorAll('')
+      console.log(element)
+  
+    Qual usar? 
+      getElementByI (element)
+      getElementByClass(HTMLCollection)
+      getElementByTagName(HTMLCollection)
+      QuerySelector(element) 
+      QuerySelectorAll(Nodelist) // Nodelist pode rodar o foreach
+      
+    
+    Manipulando o conteúdo 
+      //textContent
+   
+        HTML
+          <!DOCTYPE html>
+          <html lang="pt-br">
+          <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Meu blog</title>
+          </head>
+          <body>
+              <h1>Meu blog</h1>
+          </body>
+          </html>
+
+      JS
+        const element = document.querySelector('h1')
+
+        element.textContent += " Olá devs " // concatena junto com o h1
+
+        console.log(element.textContent) // verificando o valor de texto dentro dele 
+      
+      innerText
+        
+        HTML
+          <!DOCTYPE html>
+          <html lang="pt-br">
+          <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Meu blog</title>
+          </head>
+          <body>
+              <h1>Meu blog</h1>
+          </body>
+          </html>
+        
+        JS
+          const element = document.querySelector('h1')
+
+          element.innerText = "Olá Devs!" // troca o texto interno do HtML 
+
+      innerHTML
+        
+        HTML
+          <!DOCTYPE html>
+          <html lang="pt-br">
+          <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Meu blog</title>
+          </head>
+          <body>
+              <h1>Meu blog</h1>
+          </body>
+          </html>
+
+        JS
+
+          const element = document.querySelector('h1')
+
+          element.innerHTML = "Olá Devs! <small>!!!</small>" // troca o conteúdo interno do html ou seja converte para o HTML pois foi usado uma tag HTML
+
+      Value
+        
+        HTML
+          <!DOCTYPE html>
+          <html lang="pt-br">
+          <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Meu blog</title>
+          </head>
+          <body>
+              <h1>Meu blog</h1>
+              <input type="text">
+          </body>
+          </html>
+
+        JS
+          const element = document.querySelector('input')
+
+          element.value = "Valor que eu quiser"
+      
+      Atributos
+
+      HTML
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Meu blog</title>
+        </head>
+        <body>
+            <header>
+            <h1>Meu blog</h1>
+            </header>
+        </body>
+        </html>
+
+      JS
+        const header = document.querySelector('header')
+        header.setAtribute('id','header') // adicionou um ID
+
+        const headerID = document.querySelector('#header')
+
+        console.log(headderID.getAttribute('id')) // além de adicionar podemos pegar um atributo
+
+        header.removeAtrribute('id') //remove o id 
+
+        header.setAtribute('','') // adiciona qualquer tipo de atributo
+
+    Manipulando estilos 
+
+      HTML
+          <!DOCTYPE html>
+      <html lang="pt-br">
+      <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Meu blog</title>
+      </head>
+      <body>
+          <h1>Meu blog</h1>
+          <input type="text">
+      </body>
+      </html>
+
+     Js
+      const element = document.querySelector('body')
+      
+      elemnt.style.backgrouColor = "f9f3D2"  // camel case 
+      console.log(element.style.backgrouColor) // retorna o rgb
+
+     classList
+
+        HTML
+          <!DOCTYPE html>
+          <html lang="pt-br">
+          <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Meu blog</title>
+              <style>
+                  .active{
+                      color: red;
+                  }
+
+                  .green{
+                      background-color: green;
+                  }
+              </style>
+          </head>
+
+          <body>
+              <h1>Meu blog</h1>
+              <input type="text">
+          </body>
+          </html>
+
+        JS
+
+          const element = document.querySelector('body')
+          
+          element.classList.add('active') // adiciona a classe
+          
+          console.log(element.classList)
+
+          element.classList.remove('active') //remove a classe
+
+          element.classList.toggle('active') //adiciona se n tiver a classe se tiver ele remove
+
+    Navegando pelo elemento
+
+      parentNode parentELement
+
+        HTML
+        
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Meu blog</title>
+        </head>
+
+        <body>
+            <h1>Meu blog</h1>
+        </body>
+        </html>
+      
+      JS 
+        const body = document.querySelector('body')
+
+        console.log(body.parentNode) // "qual o nó pai " é o HTML
+      
+      childNodes children
+             HTML
+        
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Meu blog</title>
+        </head>
+
+        <body>
+            <h1>Meu blog</h1>
+        </body>
+        </html>
+
+        JS 
+          const el = document.querySelector('Body')
+
+          console.log(el.childNode) // todos os filhos em Nodelist e leava em conta os espaços vazios
+          console.log(el.children) // um HTNML collection  
+
+          firstChild firstElementchild
+            console.log(el.firstChild) // retorna #text pois tem um espaço vazio mas se apagar esse espaço retorna header 
+            console.log(el.firstElementChild) // retorna header n considera o espaço vazio
+
+          lastChild lastElementChild
+            console.log(el.lastChild) // ultimo elemento filho
+            connsole.log(lastElementChild) // pega o ultimo elemento filho 
+    
+    Navegando pelo elemento filhos
+
+      nextSibling nextElementSibling
+
+        HTML
+          
+          <!DOCTYPE html>
+          <html lang="pt-br">
+          <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Meu blog</title>
+          </head>
+
+          <body>
+              <h1>Meu blog</h1>
+
+              scrip src // adicionando o java 
+          </body>
+          </html>
+        
+        JS 
+          const el = document.querySelector('body script')
+
+          console.log(el.nextSibling) // considera o espaço vazio
+          console.log(el.nextElementSibling) // n considera o espaço vazio
+
+        previusSibling previusElementSibling
+           
+          console.log(el.previusSibling) // irmão anterior e considera o espaço em branco
+          console.log(el.previusElementSibling) // irmão anterior 
+    
+    Criando e adicionando elementos
+
+      creat element
+      
+       HTML
+        
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Meu blog</title>
+        </head>
+
+        <body>
+            <h1>Meu blog</h1>
+            
+            script src
+        </body>
+        </html>
+      
+        JS 
+        const div = document.creatElement('div')
+        div.innerText = "Olá Devs!"
+
+        // append prepend
+          const body = document.querySelector('body')
+
+          body.append(div) // depois
+
+          body.prepend(div) // antes
+      
+          insertBefore
+            const body = document.querySelector('body')
+            const script = document.querySelector(JavaScript)
+            body.insertBefore(div, script) // fica entre o header e script 
+
+          Insert after // n existe essa tag 
+            const body = document.querySelector('body')
+            const header = body.querySelector('header')
+            body.insertBefore(div,header.nextSibling)
+    
+    Eventos
+
+       HTML
+        
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Meu blog</title>
+        </head>
+
+        <body>
+            <h1 onclic="print()">Meu blog</h1>
+        </body>
+        </html>
+      
+      JS 
+        function print(){
+          console.log('print')
+        }
+    
+      Evento com o teclado
+      
+        HTML
+          <!DOCTYPE html>
+          <html lang="pt-br">
+          <head>
+              <meta charset="UTF-8">
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Meu blog</title>
+            </head>
+
+          <body>
+            <header>
+              <h1>meu blog</h1>
+              <input type="text">
+            </header>
+          </body>
+          </html>
+
+        JS
+          const input = document.querySelector('input')
+
+          input.onekeydown = fuction(){
+            console.log('rodei)
+          } // roda a função qunando coloca a tecla para baixo
+
+           input.onekeyup = fuction(){ 
+            console.log('rodei)
+          } // roda a função quando solta a tecla
+
+          input.onekeypress = fuction(){
+            console.log('rodei)
+          } // roda a quando pressiona 
+
+      Adicionando eventos via JS
+       
+       HTML
+        
+        <!DOCTYPE html>
+        <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Meu blog</title>
+        </head>
+
+        <body>
+            <h1>Meu blog</h1>
+        </body>
+        </html>
+      
+        JS // jeito mais correto
+       
+          const h1 = document.querySelector('h1');
+
+          h1.addEventLinstener('click', print
+       
+          function print(){
+          console.log('print')
+          }
+        
+          //Outro metódo
+
+          const h1 = document.querySelector('h1');
+
+          h1.onclick = print
+       
+          function print(){
+          console.log('print')
+          }
+
+          h1.onclick = function(){
+            console.log('outro momento')
+          } // vai ignorar o anterior e executar o ultmo que achar
+        
+        Argument Events
+          const input = document.querySelector('input)
+
+          input.onekeypress = function(event){
+            console.log(event)
+          }
+      
+
+
+      

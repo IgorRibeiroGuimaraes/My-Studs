@@ -1,0 +1,739 @@
+O que é a web semântica?
+
+    É basicamente adicionar significado à uma linguagem, e no caso do HTML, para dar significado ao conteúdo.
+
+    É importante praticarmos, pois no caso de necessitarmos alterar algo na nossa página, saberemos entender melhor como estão organizadas as coisas na estrutura semântica.
+
+    Todo site é único, mas existem padrões ou convenções, que identificamos ambas intencional e não intencionalmente, e ao usar uma semântica consistente, ajudamos os user agents a identificar corretamente os elementos e apresentá-los aos visitantes da página.
+
+    Também é importante para acessibilidade, pense em alguém que use um leitor de página, por exemplo. Com uma página desorganizada, é difícil fazer um bom uso de nossa página.
+
+    Além disso, os motores de busca dão preferência à sites que têm sua semântica em dia, portanto um site bem estruturado é um site melhor encontrado na web.
+
+    *Importância das tags HTML semânticas*
+
+    Elas que irão ajudar a criar o HTML semântici, pois algumas tags tem significado específicos e orientação claras sovrea onde devem ficar na página e o motivo dela existir
+
+    Exemplo:
+
+    <p>
+    Nós (programadores) somos pagos para resolver problemas,
+    não para memorizar soluções.
+                                                    ─ Mayk Brito
+    </p>
+    Com uma melhor semântica:
+
+    <blockquote> 
+    Nós (programadores) somos pagos para resolver problemas,
+    não para memorizar soluções.
+                                                    <cite>─ Mayk Brito</cite>
+    </blockquote>
+
+    blockquote = bloco de citação 
+
+    Algumas coisas para se ter em mente, é que como autor da página, é sua responsabilidade entender os significados dos elementos, e muitas vezes isso é simples, já que o html não possui um leque gigante de elementos, mas algumas vezes é muito complexo de se entender alguns elementos. Alguns elementos precisaremos usar em todo documento que criarmos, enquanto alguns provavelmente nunca serão usados.
+
+    O foco do HTML5 é melhorar a semântica, e nós sempre buscaremos regras e padrões para aprimorar a estrutura do documento.
+
+*Seções Comuns*
+
+    Além de trabalhar com textos e links no HTML, temos que sempre pensar na estrutura que colocamos no HTML, mas conforme formos crescendo no nosso entendimento, melhor vai sendo nossa estrutura.
+
+    Podemos entender algumas estruturas comuns do HTML, por isso vamos falar sobre essas seções comuns que temos entre documentos, mas atenção que nem todas as páginas vão ter todas essas seções.
+
+    Cabeçalho <header> :
+    O cabeçalho do nosso site, o local onde geralmente fica a logo e o menu.
+
+    Navegação <nav> :
+    A navegação do site vai oferecer links para seções do site, o nosso menu. costuma ficar dentro da header, porém pode ficar em outros lugares, como em uma parte lateral, ou na parte de baixo.
+
+    Conteúdo principal <main> :
+    A parte do site aonde vai o conteúdo principal, no caso de um blog, teremos vários artigos, vários posts.
+
+    Conteúdo relacionado <aside>:
+    O conteúdo relacionado é algo que seja relacionado levemente ao nosso conteúdo principal, porém não tanto para ficar lá.
+
+    Rodapé <footer>
+    Onde ficam as informações da parte de baixo da página.
+
+    Exemplo básico de como ficaria um HTML semântico:
+
+    <body>
+        <header>
+            logomarca
+
+            <nav>
+                <ul>
+                    <li>item</li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            conteúdo principal
+        </main>
+
+        <aside>
+            parte lateral
+        </aside>
+
+        <footer>rodapé</footer>
+
+    </body>
+    Você pode perceber que não está ordenado, como no desenho que o Mayk fez, porém, isso é de ser esperado, já que o HTML trabalha apenas com a parte de informação do nosso site, enquanto o visual fica todo com o CSS.
+
+*Header*
+
+    Vamos falar um pouco mais desse elemento estrutural e semântico que é o header. Primeiramente, não confunda o header com o head, são parecidos apenas na escrita, mas um possui er no final, então fique atento.
+
+    Primeiramente, quando no início de uma página, é visto como uma header global, mas também pode ser usado em outros elementos semânticos como article, section, entre outros.
+
+    Não use um header dentro de um header, nem dentro de um footer, isso quebra a semântica, a ideia do header.
+
+    Você também pode usar múltiplos headers, e ele não possui atributos específicos, apenas atributos globais, que são aplicáveis a todas as outras tags. O header também vai ocupar toda a linha na qual for aplicado
+
+*Nav*
+    A tag Nav, esse elemento de navegação, vai servir para representar uma seção da nossa página que vai apontar para outras páginas, geralmente é usada dentro da header, e não necessariamente devam todos os links de sua página estar dentro de uma tag nav, é mais destinada para coisas importantes do site.
+
+    Porém, você pode sim ter mais de um nav na sua página, mas pense bem onde você vai deixar esse nav, já que ele é destinado a coisas importantes e especiais da página.
+
+    A tag nav não possui atributos específicos, apenas os globais.
+
+*Main*
+
+    A tag main é para um conteúdo único da sua página, portanto, você vai utilizá-la apenas uma vez por página, e vai ser colocada direto do body, e não é legal deixar em qualquer outro lugar além de logo depois do body, entendemos a tag main como o foco central da página, o conteúdo principal da aplicação, então geralmente dentro dessa tag, não vamos deixar o nosso menu.
+
+    Exemplo de um main adequado, de uma página de receitas:
+
+    <body>
+
+        <main>
+            <h1>Receitas</h1>
+            <p>Essa é uma página de receitas</p>
+
+            <article>
+                <h2>Receita de torta de maçã</h2>
+                <p>Essa é uma receita de torta de maçã</p>
+            </article>
+
+            <article>
+                <h2>Receita de torta de limão</h2>
+                <p>Essa é uma receita de torta de maçã</p>
+            </article>
+        </main>
+    </body>
+    Essa estruturação semântica vai nos ajudar com a nossa própria organização, com o nosso CSS, com o Javascript, com o motor de buscas, acessibilidade, entre outros.
+
+    A tag main não possui atributos específicos, somente os globais
+
+*Article*
+    A tag article vai criar blocos de conteúdo que estejam relacionados, exemplo a seguir:
+
+    <body>
+
+        <main>
+            <h1>Receitas</h1>
+            <p>Essa é uma página de receitas</p>
+
+            <article>
+                <h2>Receita de torta de maçã</h2>
+                <p>Essa é uma receita de torta de maçã</p>
+            </article>
+
+            <article>
+                <h2>Receita de torta de limão</h2>
+                <p>Essa é uma receita de torta de maçã</p>
+            </article>
+        </main>
+    </body>
+    No caso do nosso exemplo, teremos receitas, mas também poderia ser de posts de um blog, fotografias, vai depender de o que seu site está fazendo.
+
+    A tag article não possui atributos específicos, somente os globais.
+
+*Aside*
+    A tag aside é para conteúdos levemente relacionados ao conteúdo principal, como explicações do conteúdo, glossários, links extras, biografia do autor, informações de perfil e etc.
+
+    É uma tag fácil de se entender, porém fácil de se confundir, então evite atribuir a tag aside ao lado da página conforme você for aprendendo mais sobre HTML, CSS.
+
+*Footer*
+    A tag footer é bem tranquila de se entender, ela fica no final da página e vai geralmente ter informações do autor da página, copyright, contato, sitemap, voltar ao topo, são algumas das coisas que aparecem geralmente no footer.
+
+    Abaixo um exemplo de como seria um HTML com footer:
+
+    <article>
+        <h1>Sobre nós</h1>
+        <p>Formamos um time de profissionais: </p>
+
+        <ol>
+            <li>Capacitados</li>
+            <li>Gentis</li>
+            <li>Honestos</li>
+            <li>Gentils</li>
+        </ol>
+
+        <h2>Quem são</h2>
+        <ul>
+            <li>Harry Hair</li>
+            <li>Dora Depiladora</li>
+            <li>Massoterapeuta Massa</li>
+            <li>Esteticista Ciça</li>
+            <li>Pedo Curi</li>
+            <li>Bárbara Brabeira</li>
+            <li>Cecília (para seus cílios)</li>
+        </ul>
+
+    </article>
+
+    <footer>
+        <p>© 2020 Cabeleleila Leila</p>
+    </footer>
+    A tag footer não possui atributos específicos, somente os globais.
+
+*Section*
+    A tag section serve para colocarmos seções na nossa página HTML, e uma dica de ouro: Geralmente se coloca um título e conteúdo na tag section. Antigamente usava-se uma div para fazer essas divisões e seções de conteúdos, mas semanticamente é mais apropriado usar uma tag section. Exemplo de uso a seguir:
+
+    <main>
+        <h1>Receita 1</h1>
+        <p>descrição da receita</p>
+
+        <section>
+            <h2> Modo de preparo</h2>
+            <p>Modo de preparo</p>
+        </section>
+    </main>
+    A tag section pode ser usada dentro de um article, e não possui atributos específicos, somente os globais.
+
+*Elementos genéricos não semânticos*
+
+    Escrever HTML semântico é algo que leva tempo, e precisa de muita prática para fazer com que o HTML tenha maior significado. Temos dois elementos não semânticos para uso genérico, um para bloco e outro para texto, sendo esses o div e o span.
+
+    Em ambas as situações nós usaremos atributos globais como id e class para entregar um maior significado.
+
+    O span é usado quando não se acha um elemento de texto semântico, já o div, quando não se acha um elemento de bloco semântico.
+
+    Um exemplo de uso do span é caso queira dar um destaque no texto, mas não queira usar a tag strong, algo parecido com:
+
+    <h1>Título <span class="destaque">destacado</span></h1>
+    Um exemplo do uso de div semântico:
+
+    <div class="cart">
+        <h2>Carrinho de compras</h2>
+    </div>
+
+*Sletores*
+
+    Conecta um elemento HTML com o CSS a fim de alterar o elemento.
+
+    *Tipos*
+
+    Element Selector
+
+    Todos os elementos HTML
+    HTML
+
+    <h1>Título da página</h1>
+    <p>Conteúdo da minha página</p>
+    CSS
+
+    h1 {
+        color: blue;
+        font-size: 60px;
+    }
+
+    p {
+        color: green;
+    }
+    
+    ID Selector
+
+    Um elemento que tenha um atributo id
+    Cada id deverá ser único
+    Usa-se # para indicar um ID selector
+    HTML
+
+    <h1 id="title">Título da página</h1>
+    <p id="content">Conteúdo da minha página</p>
+    CSS
+
+    #title {
+    color: yellow;
+    }
+
+    #content {
+        color: orange;
+    }
+    
+    Class Selector
+
+    Os elementos com atributo class
+    Podemos ter uma ou mais classes
+    Usa-se . para indicar um class selector
+    Todos os elementos com a mesma class são alterados
+    HTML
+
+    <h1 class="red big">Título da página</h1>
+    <p class="red big">Conteúdo da minha página</p>
+    CSS
+
+    .red {
+    color: red;
+    }
+
+    .big {
+        font-size: 3em;
+    }
+    
+    Attribute Selector
+
+    Um elemento que tenha um atributo específico
+    HTML
+
+    <h1 title="Algum titlulo">Título da página</h1>
+    <p title="Conteúdo da página">Conteúdo da minha página</p>
+    CSS
+
+    [title] {
+        color: orange;
+    }
+   
+    Pseudo-class Selector
+
+    Elementos em um estado específico
+    HTML
+
+    <h1 class="red big">Título da página</h1>
+    <p class="red big">Conteúdo da minha página</p>
+    CSS
+
+    p:hover {
+        color: red;
+    }
+
+    h1:hover {
+        color: red;
+    }
+    
+    Múltiplos
+    
+    É possível selecionar múltiplos elementos e aplicar alguma regra CSS para todos eles.
+
+    Usamos uma separação por vírgulas para isso:
+
+    h1, p, .title, .title:hover {
+        color: red;
+    }
+
+*Combinators*
+    Combinadores, pois eles trabalham para buscar e combinar seletores a fim de aplicar uma estilização
+
+    Descendant combinator
+    Identificado por um espaço entre os seletores
+    Busca um elemento dentro de outro, mesmo que existam outros elementos no caminho
+    HTML
+
+    <body>
+        <article>
+            <h2>Um Título</h2>
+        </article>
+    </body>
+    CSS
+
+    body article h2 {
+        color: red;
+    }
+
+*Child Combinator*
+    Identificado pelo sinal > entre dois seletores
+    seleciona somente o elemento que é filho direto do pai
+    Elementos depois do filho direto serão desconsiderados
+    
+    HTML
+
+    <body>
+    <ul>
+        <li>Item 1</li>
+        <ul>
+        <li>Item 2</li>
+        </ul>
+    </ul>
+    </body>
+    body > ul > li {
+        color: blue;
+    }
+
+*Sibling Combinator*
+    
+    Identificado pelo sinal + entre dois seletores
+    Seleciona somente o elemento do lado direito que é irmão direto na hierarquia
+    HTML
+
+    <h1>
+    Título
+    </h1>
+    <p>
+    Esse é um parágrafo
+    </p>
+    <p>
+    Mais um parágrafo
+    </p>
+    CSS
+
+    h1 + p {
+        color: red;
+    }
+    
+    *General sibling combinator*
+    
+    Identificado pelo sinal ~ entre dois seletores
+    Seleciona todos os elementos irmãos
+    HTML
+
+    <h1>
+    Título
+    </h1>
+    <p>
+    Esse é um parágrafo
+    </p>
+    <p>
+    Mais um parágrafo
+    </p>
+    CSS
+
+    h1 ~ p {
+        color: red;
+    }
+
+*Utilizando Combinadores*
+
+    HTML
+
+    <ul>
+    <li>Alooo</li>
+    <li class="red">Hey</li>
+    </ul>
+    CSS
+
+    ul > li[class="red"] {
+        color: red;
+    }
+    Dica:
+    Seletores muito específicos tendem a causar dificuldades no reuso das regras de estilização
+    Muitas vezes, um simples uso de classes, torna o trabalho mais eficiente
+
+*Pseudo-classes*
+    
+    É um tipo de seletor que irá selecionar um elemento que estiver em um estado específico.
+
+    Exemplo: É o primeiro elemento dentro de uma caixa, ou, o elemento está com o ponteiro do mouse sobre ele.
+
+    Pseudo-classes começam com 2 pontos seguido do nome da pseudo class :pseudo-class-name
+
+*First-Child*
+
+    :first-child
+    É quando queremos selecionar o primeiro filho de um grupo de elementos.
+
+    HTML
+
+    <ul>
+    <li>Gratidão</li>
+    <li>Esperança</li>
+    <li>Fé</li>
+    </ul>
+    CSS
+
+    ul li:first-child {
+    font-weight: bold;
+    }
+
+*Nth-of-type*
+
+    :nth-of-type()
+    Pega o elemento por tipo e posição
+
+    HTML
+
+    <ul>
+    <h3>Palavras bonitas</h3>
+    <li>Gratidão</li>
+    <li>Esperança</li>
+    <li>Fé</li>
+    </ul>
+    CSS
+
+    ul li:nth-of-type(1) {
+    font-weight: bold;
+    }
+
+*Nth-child*
+
+    :nth-child()
+    É quando queremos selecionar o primeiro filho de um grupo de elementos.
+
+    HTML
+
+    <ul>
+        <h3>Palavras bonitas</h3>
+    <li>Gratidão</li>
+    <li>Esperança</li>
+    <li>Fé</li>
+    </ul>
+    CSS
+
+    ul li:nth-child(2) {
+    font-weight: bold;
+    }
+
+*Nth-child odd e even*
+
+    :nth-child(odd) e :nth-child(even)
+    even - números pares
+    odd - números ímpares
+    HTML
+
+    <ul>
+    <li>Gratidão</li>
+    <li>Esperança</li>
+    <li>Fé</li>
+    <li>Liberdade</li>
+    </ul>
+    CSS
+
+    ul li:nth-child(odd) {
+    color: gray;
+    }
+
+*hover e focus*
+
+    Ações do usuário
+    Algumas estilos só são aplicados quando o usuário faz alguma ação na página.
+
+    :hover
+
+    a:hover {
+    color: red;
+    }
+    Vai mudar a cor do link para vermelho quando o usuário passar o mouse sobre o link
+
+    :focus é aplicado quando o elemento recebe o foco da ação do usuário que pode ser feita utilizando o teclado ou clicando no elemento com o mouse. É comumente usado em campos de input como uma forma de mostrar qual o input "ativo".
+
+    input:focus {
+    border-color: red;
+    }
+
+*disable e required*
+
+    Também podemos usar atributos para selecionar elementos no CSS
+
+    Atributos
+    :disabled
+
+    HTML
+
+    <input type="text" disabled>
+    CSS
+
+    input:disabled {
+    background-color: green;
+    }
+    :required
+
+    HTML
+
+    <input type="text" required>
+    CSS
+
+    input:required {
+    background-color: red;
+    }
+
+*Lindk do MDN sobre pseudo-classes*
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+
+*Pseudo-Elements*
+
+    Com pseudo-elements nós podemos adicionar elementos HTML pelo próprio CSS
+    ::pseudo-element-name
+
+    *Exemplo*
+    ::before adiciona um peseudo-elemento antes do elemento selecinado
+
+        HTML
+
+        <ul>
+        <li>Gratidão</li>
+        <li>Esperança</li>
+        <li>Fé</li>
+        <li>Liberdade</li>
+        </ul>
+
+        css
+        li ::before{
+            content ">"
+        }
+
+    ::after adiciona um pseudo-elemento depois do elemento selecionado.
+
+        li :: after{
+            content: ";"
+        }
+
+    Tanto para o ::before quanto para o ::after é preciso adicionar o content, mesmo que ele seja vazio content = "";
+
+    ::first-line pega a primeira linha de um texto.
+
+        p :: first-line{
+            fonnt-weight: bold;
+        }
+
+    Refêrencia
+    https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements  
+
+*Layo e Evolução*
+    
+    Layout tem a ver com maneira que os elementos estão distrubidos na tela 
+
+*Normal Flow*
+
+    Ou Flou Layout é a maneira que os elementos `block` e `inline` ficam na pagina
+
+    Exemplo
+        ```html
+        <p> Texto blcok com <strong>inline</strong> dentro <p>
+        ```
+
+*Tables*
+
+    É a maneira de tabelas onde a tag `table` recebe um display `table` fazendo com que os elemntos internos `td` e `tr` possam ser usados para montar uma tabela
+
+        Exemplo
+            ```html
+                <table>
+                <tr> // nova linhas
+                    <td> hora </td>
+                    <td> 20:00 </td>
+                </tr>
+                 <tr>
+                    <td> hora </td>
+                    <td> 20:37 </td> // nova coluna 
+                </tr>
+                </table>
+             ```
+
+*Tabless*
+    Uso das propriedade `float`, `clear` para que os elementos possam mudar de posição na tela.
+    
+    Exemplo:
+        ```html
+        <div> style = "float: left">
+         esquerda
+        </div>
+          <div> style = "float: right">
+         direita
+        </div>
+        </div>
+          <div> style = "float: both">
+         Normal
+        </div>
+     ```
+
+*Flexbox*
+    
+    A caixa se torn flex, fazendo com que os elementos internos possam receber melhor:
+
+    -Alinhamneto
+    -Ordenação
+    -Tamanhos flexíveis
+
+*Terminologia*
+    Flex container - Flex item e Nesting
+
+    -Flex container
+        -Flex item
+    
+    -Nesting // é a idea quando um elemento tem vários elementos dentro
+    -Axis // eixo
+        -main 
+            -start, end 
+        -cross
+            -start,end 
+    -Flex sizing
+        -flexível
+        -altera width/height dos intens para o preenchimento dos epaços flex container 
+
+* Propriedade do Flex container*
+
+    *Direção dos intens
+    *Multi linhas
+    *Alinhamneto
+        *Principal
+        *Cruzado
+    *espaços entre os intens
+
+*Direção dos intens*
+    -Flex é uma dimensão (Horizontal ou Vertical)
+    -podemos mudar a direção com `flex-direction`
+    -valores(row | row-reverse | column | colum-reverse)
+
+*Flex-Wrap*
+    -Podemos usar multi linhas.
+    -Cada nova linha, um novo flex container
+
+*Flex-Flow*
+    -shorthand
+    -flex-direction || flex-wrap
+
+*Justify-Content*
+    - Alinhamento dos elemntos dentro do container
+    -Distribuição dos elementos
+
+        ## valores
+            -Flex-start
+            -Flex-end
+            -center
+            -space-around
+            -space-between
+            -space-evenly
+
+*Alingn-items*
+    -Alinhamento dos elementos no eixo Cruzado
+
+    ##Valores 
+        -Stretch // "esticado"" 
+        -Flex-start // deixa os elementos no começo do eixo cruzado
+        -Flex-end // deixa os elementos final do eixo cruzado
+        -center // centraliza os elementos
+
+*Gap*
+    -Espaõs entre os elementos
+    
+    ## Valores
+
+        -Unidade de medidas 
+        -fixa: px, pt 
+        -flexíveis: %, em, rem 
+
+*Propriedades para os intens
+
+    - Flex-basis
+    - Flex-grow
+    - Flex-shrink
+    - Flex
+    - Order
+
+*Flex-Basis*
+    Ele mexe com as larguras dos itens, se mexer ele como column, vai mudar a altura do elemento
+
+*Flex-Grow*
+    - O crescimento do item dentro do container em relação aos espços vazios. 
+
+*Flex-shrink*
+    - O encolher do item do container,
+
+*Flex* 
+    -shorthand
+    -flex-grow flex-shrink flex-basis
+    -podem ter 1, 2 ou 3 valores
+
+*Order*
+    -basicamente serve para ordenar os intems
